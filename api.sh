@@ -1,4 +1,5 @@
-GITHUB_API_URL="https://api.github.com"
-echo $GITHUB_API_TOKEN > gh auth login --with-token
+# export GITHUB_API_TOKEN=...
 
-gh api /enterprises/github/consumed-licenses
+curl --user "monalisa:$GITHUB_API_TOKEN" --request GET http://api.github.localhost/enterprises/github-inc/consumed-licenses
+
+ gh api -H "Accept: application/vnd.github+json" https://wham.review-lab.github.com/api/v3/enterprises/gitcoin-vss-testing-msignite2018/consumed-licenses
